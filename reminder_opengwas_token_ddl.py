@@ -6,7 +6,7 @@ from email.utils import formataddr
 
 def send_reminder():
     # 优先从环境变量读取，如果没有则使用备用值（建议在 GitHub Secrets 配置 MAIL_PASS）
-    password = os.getenv('MAIL_PASS', 'ntstdjovgzuwbhed') 
+    password = os.getenv('MAIL_PASS') 
     sender_email = "312198221@qq.com"
     receiver_email = "mols15712965701@163.com"
     
