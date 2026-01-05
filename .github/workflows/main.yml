@@ -1,0 +1,18 @@
+name: Run Token Reminder
+on:
+  schedule:
+    - cron: '30 0 18 1 *' # 定时：2026年1月18日 UTC 00:30 (北京时间 08:30)
+  workflow_dispatch:      # 允许手动触发测试
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Run
+        env:
+          MAIL_PASS: ${{ secrets.MAIL_PASS }} # 将保险箱里的密码传给代码
+        run: python reminder.py
