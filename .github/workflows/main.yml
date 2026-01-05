@@ -15,4 +15,4 @@ jobs:
       - name: Run
         env:
           MAIL_PASS: ${{ secrets.MAIL_PASS }} # 将保险箱里的密码传给代码
-        run: python reminder.py
+        run: python reminder_opengwas_token_ddl.py
